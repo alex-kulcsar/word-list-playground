@@ -42,11 +42,8 @@ namespace Bloom {
         const b: BigNum.BigInt = BigNum.CreateBigInt(GameWords.FILTERS[wordLength].bValues[hash])
         const p: BigNum.BigInt = BigNum.CreateBigInt(GameWords.FILTERS[wordLength].p)
         const m: BigNum.BigInt = BigNum.CreateBigInt(GameWords.FILTERS[wordLength].m)
-        // ax + b % p % m
-        let r: BigNum.BigInt = BigNum.multiply(a, value)
-        r = BigNum.add(r, b)
-        r = BigNum.mod(r, p)
-        r = BigNum.mod(r, m)
+        // r = ax + b % p % m
+        let r: BigNum.BigInt = a.multiply(value).add(b).mod(p).mod(m)
         return r.toNumber()
     }
 
@@ -55,8 +52,7 @@ namespace Bloom {
         let toReturn: BigNum.BigInt = BigNum.CreateBigInt(0)
         for (let c of ucWord) {
             // toReturn = (toReturn << 5) + c.charCodeAt(0) - 'A'.charCodeAt(0)
-            toReturn = BigNum.leftShift(toReturn, 5)
-            toReturn = BigNum.add(toReturn, BigNum.CreateBigInt(c.charCodeAt(0) - 'A'.charCodeAt(0)))
+            toReturn = toReturn.leftShift(5).add(c.charCodeAt(0)).subtract('A'.charCodeAt(0))
         }
         return toReturn.length == 0 ? BigNum.CreateBigInt(1) : toReturn
     }

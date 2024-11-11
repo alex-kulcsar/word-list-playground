@@ -10,7 +10,9 @@
         "main.ts",
         "README.md",
         "assets.json",
-        "wordlist.ts"
+        "wordlist.ts",
+        "bloom.ts",
+        "bloomfilter.ts"
     ],
     "testFiles": [
         "test.ts"

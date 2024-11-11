@@ -7,3 +7,22 @@ if (words) {
     }
     game.showLongText(msg, DialogLayout.Full)
 }
+
+// From original implementation.
+/*
+const EXIT_TOKEN: string = 'EXIT NOW'
+let input: string = ''
+let msg: string
+while (input != EXIT_TOKEN) {
+    input = game.askForString('Enter a word.')
+    if (input.toUpperCase() == EXIT_TOKEN) {
+        break
+    }
+    if (input.length < GameWords.FILTERS.length && GameWords.findWord(input)) {
+        msg = `Your word ${input} is likely in the database.`
+    } else {
+        msg = `Your word ${input} is not in the database.`
+    }
+    game.showLongText(msg, DialogLayout.Center)
+}
+*/

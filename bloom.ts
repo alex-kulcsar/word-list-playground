@@ -12,10 +12,9 @@ interface BloomFilter {
 }
 
 namespace Bloom {
-    /*
     export function findWord(word: string): boolean {
-        const value: JSBI.BigInt = getWordValue(word)
-        const k: number = FILTERS[word.length].k
+        const value: BigNum.BigInt = getWordValue(word)
+        const k: number = GameWords.FILTERS[word.length].k
         // game.splash(value)
         for (let i: number = 0; i < k; i++) {
             if (!getFilterBit(getHashForWordValue(value, word.length, i), word.length)) {
@@ -29,7 +28,7 @@ namespace Bloom {
         const blockNum: number = Math.floor(location / 24)
         const byteNum: number = Math.floor((location % 24) / 8)
         const bitNum: number = location % 8
-        const block: string = FILTERS[wordLength].filter.substr(blockNum * 4, 4)
+        const block: string = GameWords.FILTERS[wordLength].filter.substr(blockNum * 4, 4)
         const byte: number = Buffer.fromBase64(block).getUint8(byteNum)
         return (byte & (1 << bitNum)) != 0
     }
@@ -38,28 +37,27 @@ namespace Bloom {
         return getHashForWordValue(getWordValue(word), word.length, hash)
     }
 
-    function getHashForWordValue(value: JSBI.BigInt, wordLength: number, hash: number): number {
-        const a: JSBI.BigInt = JSBI.CreateBigInt(FILTERS[wordLength].aValues[hash])
-        const b: JSBI.BigInt = JSBI.CreateBigInt(FILTERS[wordLength].bValues[hash])
-        const p: JSBI.BigInt = JSBI.CreateBigInt(FILTERS[wordLength].p)
-        const m: JSBI.BigInt = JSBI.CreateBigInt(FILTERS[wordLength].m)
+    function getHashForWordValue(value: BigNum.BigInt, wordLength: number, hash: number): number {
+        const a: BigNum.BigInt = BigNum.CreateBigInt(GameWords.FILTERS[wordLength].aValues[hash])
+        const b: BigNum.BigInt = BigNum.CreateBigInt(GameWords.FILTERS[wordLength].bValues[hash])
+        const p: BigNum.BigInt = BigNum.CreateBigInt(GameWords.FILTERS[wordLength].p)
+        const m: BigNum.BigInt = BigNum.CreateBigInt(GameWords.FILTERS[wordLength].m)
         // ax + b % p % m
-        let r: JSBI.BigInt = JSBI.multiply(a, value)
-        r = JSBI.add(r, b)
-        r = JSBI.mod(r, p)
-        r = JSBI.mod(r, m)
+        let r: BigNum.BigInt = BigNum.multiply(a, value)
+        r = BigNum.add(r, b)
+        r = BigNum.mod(r, p)
+        r = BigNum.mod(r, m)
         return r.toNumber()
     }
 
-    function getWordValue(word: string): JSBI.BigInt {
+    function getWordValue(word: string): BigNum.BigInt {
         const ucWord: string = word.toUpperCase()
-        let toReturn: JSBI.BigInt = JSBI.CreateBigInt(0)
+        let toReturn: BigNum.BigInt = BigNum.CreateBigInt(0)
         for (let c of ucWord) {
             // toReturn = (toReturn << 5) + c.charCodeAt(0) - 'A'.charCodeAt(0)
-            toReturn = JSBI.leftShift(toReturn, 5)
-            toReturn = JSBI.add(toReturn, JSBI.CreateBigInt(c.charCodeAt(0) - 'A'.charCodeAt(0)))
+            toReturn = BigNum.leftShift(toReturn, 5)
+            toReturn = BigNum.add(toReturn, BigNum.CreateBigInt(c.charCodeAt(0) - 'A'.charCodeAt(0)))
         }
-        return toReturn.length == 0 ? JSBI.CreateBigInt(1) : toReturn
+        return toReturn.length == 0 ? BigNum.CreateBigInt(1) : toReturn
     }
-    */
 }

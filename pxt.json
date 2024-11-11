@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "pxt-fast-ternary-string-set": "github:robo-technical-group/pxt-fast-ternary-string-set#v2.3.0"
+        "pxt-fast-ternary-string-set": "github:robo-technical-group/pxt-fast-ternary-string-set#v2.3.0",
+        "pxt-arcade-bignum": "github:robo-technical-group/pxt-arcade-bignum#v2.0.0"
     },
     "files": [
         "main.blocks",

@@ -1,5 +1,5 @@
-namespace GameWords {
-    export const FILTERS: BloomFilter[] = [null, null,
+namespace WordLists {
+    const FILTERS: BloomFilter[] = [null, null,
         {
             // 2-letter words.
             n: 110,
@@ -123,4 +123,7 @@ namespace GameWords {
         },
 
     ]
+
+    // %fixedInstance
+    export const GameWords2020: Bloom = Bloom.fromFilterSet(FILTERS)
 }

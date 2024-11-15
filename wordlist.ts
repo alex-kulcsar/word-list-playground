@@ -1,5 +1,5 @@
-namespace GameWords {
-    export const WORD_SET_BASE_64_STRINGS: string[] = [
+namespace WordLists {
+    const WORD_SET_BASE_64_STRINGS: string[] = [
         "VFQDAgAACOGqTAAFAAEEz6pPBD0AAgThqlcEswADBOeqTABVAAQInarZCJ0InQidqkQACgAGApyqUgIQ",
         "AAcCqKpJAo4ACAKrqkYAaQAJAq2q1AidCJ0InapCABMACwF/qlUADwAMCJ2qUgFvAA0BjqpOAK8ADgEY",
         "qtMInQidAAmqQQidABAA+apSAOMAEQEBqkUAOwASAQSqxAidCJ0InapBCJ0AFAidqk0AGAAVAJKqTwCH",
@@ -296,4 +296,7 @@ namespace GameWords {
         "AMMInapPCJcIlgidqkwA0ADwCJmqSQidCJgInapFCJ0CDQidqlUInQiaCJ2qUgAWADIBbqpaCJ0InAid",
         "qk8InQIHCJ0=",
     ]
+    
+    //% fixedInstance
+    export const MoodleWords: TernaryStringSet = TernaryStringSet.fromB64StringSet(WORD_SET_BASE_64_STRINGS)
 }

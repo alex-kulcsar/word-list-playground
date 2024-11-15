@@ -1,26 +1,22 @@
-let words: TernaryStringSet = TernaryStringSet.fromB64StringSet(GameWords.WORD_SET_BASE_64_STRINGS)
-if (words) {
-    let max: number = words.size
-    let msg: string = "Random words from word list:"
-    for (let i: number = 0; i < 10; i++) {
-        msg += "\n" + words.get(randint(0, max - 1))
-    }
-    game.showLongText(msg, DialogLayout.Full)
-}
-
-// From original implementation.
-const EXIT_TOKEN: string = 'EXIT NOW'
-let input: string = ''
+let input: string
+input = ""
 let msg: string
+msg = "Random words from word list:"
+for (let index = 0; index < 10; index++) {
+    msg = "" + msg + "\n" + WordLists.getRandomWordFromSet(WordLists.MoodleWords)
+}
+game.showLongText(msg, DialogLayout.Full)
+let EXIT_TOKEN: string
+EXIT_TOKEN = "EXIT NOW"
+msg = ""
 while (input != EXIT_TOKEN) {
-    input = game.askForString('Enter a word.')
+    input = game.askForString("Enter a word.")
     if (input.toUpperCase() == EXIT_TOKEN) {
-        break
+        break;
     }
-    if (input.length < GameWords.FILTERS.length && Bloom.findWord(input)) {
-        msg = `Your word ${input} is likely in the database.`
+    if (false) {
+
     } else {
-        msg = `Your word ${input} is not in the database.`
+
     }
-    game.showLongText(msg, DialogLayout.Center)
 }

@@ -3,7 +3,7 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "pxt-fast-ternary-string-set": "github:robo-technical-group/pxt-fast-ternary-string-set#v2.3.0",
+        "pxt-fast-ternary-string-set": "github:robo-technical-group/pxt-fast-ternary-string-set#v2.3.1",
         "pxt-arcade-bignum": "github:robo-technical-group/pxt-arcade-bignum#v2.0.0"
     },
     "files": [
@@ -13,7 +13,8 @@
         "assets.json",
         "wordlist.ts",
         "bloom.ts",
-        "bloomfilter.ts"
+        "bloomfilter.ts",
+        "custom.ts"
     ],
     "testFiles": [
         "test.ts"

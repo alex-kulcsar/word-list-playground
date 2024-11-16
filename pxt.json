@@ -2,19 +2,13 @@
     "name": "Word List Playground",
     "description": "",
     "dependencies": {
-        "device": "*",
-        "pxt-fast-ternary-string-set": "github:robo-technical-group/pxt-fast-ternary-string-set#v2.3.1",
-        "pxt-arcade-bignum": "github:robo-technical-group/pxt-arcade-bignum#v2.0.0"
+        "device": "*"
     },
     "files": [
         "main.blocks",
         "main.ts",
         "README.md",
-        "assets.json",
-        "wordlist.ts",
-        "bloom.ts",
-        "bloomfilter.ts",
-        "custom.ts"
+        "assets.json"
     ],
     "testFiles": [
         "test.ts"

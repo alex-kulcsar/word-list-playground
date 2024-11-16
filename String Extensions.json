@@ -1,0 +1,8 @@
+{
+  "README.md": " ",
+  "assets.json": "",
+  "custom.ts": "namespace String {\n    //% block hidden\n    export function makeUppercase(s: string): string {\n        return s.toUpperCase()\n    }\n\n    //% block hidden\n    export function makeLowercase(s: string): string {\n        return s.toLowerCase()\n    }\n}",
+  "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"pxt-on-start\" x=\"0\" y=\"0\"></block></xml>",
+  "main.ts": "\n",
+  "pxt.json": "{\n    \"name\": \"String Extensions\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"custom.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.12.57\",\n        \"tag\": \"v1.12.57\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/50c17cec0d73d32911acd1633e6ce81b85ed2c3a\",\n        \"target\": \"1.12.57\",\n        \"pxt\": \"8.5.68\"\n    },\n    \"preferredEditor\": \"tsprj\"\n}\n"
+}

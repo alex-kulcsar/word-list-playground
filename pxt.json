@@ -2,13 +2,17 @@
     "name": "Word List Playground",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "String Extensions": "pkg:String Extensions.json",
+        "Word List Local Extension": "pkg:Word List Local Extension.json"
     },
     "files": [
         "main.blocks",
         "main.ts",
         "README.md",
-        "assets.json"
+        "assets.json",
+        "Word List Local Extension.json",
+        "String Extensions.json"
     ],
     "testFiles": [
         "test.ts"
@@ -20,5 +24,5 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "tsprj"
+    "preferredEditor": "blocksprj"
 }
